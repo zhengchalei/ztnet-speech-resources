@@ -6,8 +6,8 @@
 
 在 [Releases](https://github.com/zhengchalei/ztnet-speech-resources/releases/latest) 下载：
 
-- `linux-arm64.zip`：RK3588、RK3562 等 Linux ARM64 Edge。
-- `linux-x64.zip`：Linux x86-64 Cloud / Edge。
+- [linux-arm64.zip](https://github.com/zhengchalei/ztnet-speech-resources/releases/download/espeak-ng-1.52.0-20261114/linux-arm64.zip)：RK3588、RK3562 等 Linux ARM64 Edge。
+- [linux-x64.zip](https://github.com/zhengchalei/ztnet-speech-resources/releases/download/espeak-ng-1.52.0-20261114/linux-x64.zip)：Linux x86-64 Cloud / Edge。
 - `catalog.json`：平台、版本、大小、SHA-256 和固定下载地址，供 Cloud 自动读取。
 
 每个标准 ZIP 包含运行程序、普通话字典、MP3 编码程序和许可文件。它不是安装到系统里的 apt 软件包，也不是单独的 ONNX 模型。资源安装后在节点持久目录保存，断网可用。应用升级无需重新发布语音资源。
@@ -30,7 +30,7 @@ python scripts/prepare_local_tts.py --output output/speech-release
 python scripts/publish_local_tts.py --tag espeak-ng-1.52.0-YYYYMMDD --notes release-notes.md
 ```
 
-发布脚本先校验包内容并上传完整草稿，再发布为 latest。Cloud 同步最新 Release 只更新资源来源，节点安装仍需显式点击。
+发布脚本先校验包内容并上传完整草稿，再发布为 latest。对应的第三方源码与构建材料通过 `--extra-asset <源码归档>` 一并上传。Cloud 同步最新 Release 只更新资源来源，节点安装仍需显式点击。
 
 ## 许可和来源
 
